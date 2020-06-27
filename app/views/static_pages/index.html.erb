@@ -1,0 +1,13 @@
+<h1>FLICKR PHOTOSTREAM</h1>
+<p><%= params %></p>
+
+<%= form_with(url: "/", method: "get", local: true) do %>
+  <%= label_tag(:q, "Search for user by ID:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<hr>
+<% @photos.each do |photo| %>
+  <%= image_tag photo %>
+<% end %>
